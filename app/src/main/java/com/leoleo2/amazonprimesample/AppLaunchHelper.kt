@@ -11,7 +11,7 @@ class AppLaunchHelper(private val context: Context) {
 
     /**
      * example
-     * sasa
+     * https://www.amazon.co.jp/gp/video/detail/B09PQB418P
      */
     fun launchAmazonPrimeApp(uriString: String) {
         launchExternalApp(onAction = {
