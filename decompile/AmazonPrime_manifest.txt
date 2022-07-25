@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android" xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="328014347" android:versionName="3.0.328.14347" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.amazon.avod.thirdpartyclient" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30"/>
+    <permission android:name="com.amazon.avod.SDK_ACCESS" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="com.amazon.avod.SDK_ACCESS"/>
+    <uses-permission android:name="com.amazon.CONTENT_PROVIDER_ACCESS"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="com.samsung.permission.USE_MHDR_SERVICE"/>
+    <queries>
+        <package android:name="com.amazon.appmanager"/>
+        <package android:name="com.instagram.android"/>
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
+        </intent>
+        <intent>
+            <action android:name="com.amazon.identity.action.BOOTSTRAP_SSO"/>
+        </intent>
+        <intent>
+            <action android:name="com.amazon.dcp.sso.action.session.users.changed"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="com.amazon.dcp.sso.permission.account.changed"/>
+    <uses-permission android:name="com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed"/>
+    <uses-permission android:name="amazon.permission.COLLECT_METRICS"/>
+    <uses-permission android:name="android.permission.VIBRATE" android:maxSdkVersion="18"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.amazon.device.environment.permission.SWITCH_STAGE"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <permission android:name="com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.amazon.identity.auth.device.perm.AUTH_SDK" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.amazon.dcp.sso.permission.account.changed" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.amazon.identity.permission.CALL_AMAZON_DEVICE_INFORMATION_PROVIDER" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="com.amazon.dcp.metrics.permission.METRICS_PERMISSION"/>
+    <uses-permission android:name="com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED"/>
+    <uses-permission android:name="com.amazon.identity.auth.device.perm.AUTH_SDK"/>
+    <uses-permission android:name="com.amazon.identity.permission.GENERIC_IPC"/>
+    <uses-permission android:name="com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS"/>
+    <uses-permission android:name="com.amazon.dcp.sso.permission.MANAGE_COR_PFM"/>
+    <uses-permission android:name="com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE"/>
+    <uses-permission android:name="com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER"/>
+    <uses-permission android:name="com.amazon.identity.permission.CALL_AMAZON_DEVICE_INFORMATION_PROVIDER"/>
+    <permission android:name="com.amazon.appmanager.preload.permission.READ_PRELOAD_DEVICE_INFO_PROVIDER" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="com.amazon.appmanager.preload.permission.READ_PRELOAD_DEVICE_INFO_PROVIDER"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application android:theme="@style/AVOD_Theme_Legacy" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="com.amazon.avod.thirdpartyclient.ThirdPartyApplication" android:allowBackup="false" android:largeHeap="true" android:supportsRtl="true" android:usesCleartextTraffic="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <meta-data android:name="dcm.program.name" android:value="ATVAndroid3P"/>
+        <meta-data android:name="MAPDeviceAttributeRuntimeOverride" android:value="true"/>
+        <meta-data android:name="MAPRuntimeIsolateForAccountPool" android:value="Amazon_Teens"/>
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:name="com.amazon.avod.identity.ThirdPartyMAPInformationProvider" android:permission="com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER" android:enabled="true" android:exported="true" android:authorities="com.amazon.identity.auth.device.MapInfoProvider.AVOD"/>
+        <activity android:theme="@style/AVOD_Theme_SplashScreen" android:name="com.amazon.avod.client.activity.HomeScreenActivity" android:finishOnTaskLaunch="false" android:clearTaskOnLaunch="false" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.VIEW_HOME_SCREEN"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/home_prefix"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/home_prefix"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/home_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/home_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/home_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/home_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/home_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/home_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="com.amazon.avod.thirdpartyclient.LauncherActivity" android:targetActivity="com.amazon.avod.client.activity.HomeScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="com.amazon.avod.thirdpartyclient" android:host="www.amazon.com" android:pathPattern="/pin-on-playback-supported"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:name="com.amazon.avod.download.activity.DownloadsLandingActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/downloads_prefix"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/downloads_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.VIEW_YVL_DEVICE"/>
+                <action android:name="com.amazon.avod.intent.action.VIEW_DOWNLOADS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/downloads_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/downloads_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/downloads_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/downloads_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/downloads_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/downloads_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="com.amazon.avod.client.activity.DownloadsActivity" android:targetActivity="com.amazon.avod.download.activity.DownloadsLandingActivity"/>
+        <activity android:name="com.amazon.avod.watchlist.WatchlistListActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/watchlist_prefix"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/watchlist_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.VIEW_WATCHLIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/watchlist_v2_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/watchlist_v2_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/watchlist_v2_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/watchlist_v2_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/watchlist_v2_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/watchlist_v2_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/watchlist_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/watchlist_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/watchlist_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/watchlist_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/watchlist_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/watchlist_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.detailpage.DetailPageActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/detail_prefix"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/detail_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.amazon.avod.action.offlinePlayback"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.amazon.itemdetails"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content" android:host="com.amazon.avod.detail"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/detail_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/detail_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/detail_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/detail_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/detail_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/detail_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="com.amazon.avod.client.activity.YVLSeasonActivity" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:targetActivity="com.amazon.avod.detailpage.DetailPageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.amazon.seasondetails"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name="com.amazon.avod.client.activity.DetailPageActivity" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:targetActivity="com.amazon.avod.detailpage.DetailPageActivity"/>
+        <activity android:name="com.amazon.avod.client.activity.SearchListActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/search_prefix"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/search_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content" android:host="com.amazon.avod.search"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/search_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/search_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/search_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/search_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/search_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/search_prefix"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="com.amazon.avod.client.activity.WebViewActivity" android:screenOrientation="locked" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.client.activity.DeepLinkRedirectorActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.PRIME_SIGNUP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content" android:host="com.amazon.avod.primesignup"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>   
+                <category android:name="android.intent.category.DEFAULT"/>   
+                <category android:name="android.intent.category.BROWSABLE"/>   
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname"/>   
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname"/>   
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk"/>   
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de"/>   
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp"/>    
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname"/>
+                <data android:pathPrefix="@string/redirector_fallback_prefix"/>   
+                <data android:pathPrefix="@string/redirector_prefix"/>   
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.SIGNUP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content" android:host="com.amazon.avod.signup"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.client.activity.PrimeSignUpActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.CastDetailsActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|uiMode|screenSize"/>
+        <activity android:theme="@style/AVOD_Theme_CompanionMode" android:name="com.amazon.avod.secondscreen.activity.CompanionModeActivity" android:exported="true" android:finishOnTaskLaunch="true" android:launchMode="singleTask" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/res_2131951829_avod_theme_darkbackground" android:name="com.amazon.avod.thirdpartyclient.ThirdPartyPlaybackActivity" android:taskAffinity="com.amazon.avod.thirdpartyclient.ThirdPartyPlaybackActivity" android:finishOnTaskLaunch="false" android:launchMode="singleTask" android:screenOrientation="user" android:configChanges="touchscreen|keyboard|fontScale" android:windowSoftInputMode="adjustNothing" android:resizeableActivity="true" android:supportsPictureInPicture="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http" android:host="www.amazon.com" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="https" android:host="www.amazon.com" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="http" android:host="www.amazon.co.uk" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="https" android:host="www.amazon.co.uk" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="http" android:host="www.amazon.de" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="https" android:host="www.amazon.de" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="http" android:host="www.amazon.co.jp" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="https" android:host="www.amazon.co.jp" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="com.amazon.avod.thirdparty" android:host="www.amazon.com" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="com.amazon.avod.thirdparty" android:host="www.amazon.co.uk" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="com.amazon.avod.thirdparty" android:host="www.amazon.de" android:pathPattern="/piv-apk-play*"/>
+                <data android:scheme="com.amazon.avod.thirdparty" android:host="www.amazon.co.jp" android:pathPattern="/piv-apk-play*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPattern="@string/play_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPattern="@string/play_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPattern="@string/play_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPattern="@string/play_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPattern="@string/play_pattern"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/play_pattern"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPattern="@string/play_pattern"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPattern="@string/play_pattern"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/res_2131951833_avod_theme_nobackground" android:name="com.amazon.avod.thirdpartyclient.activity.AccountMismatchActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|fontScale"/>
+        <activity android:theme="@style/res_2131951841_avod_theme_transparent" android:name="com.amazon.avod.thirdpartyclient.activity.LaunchInAppBillingActivity" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:theme="@style/res_2131951841_avod_theme_transparent" android:name="com.amazon.avod.playbackclient.support.NoSupportActivity" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="touchscreen|keyboard|fontScale" android:noHistory="true"/>
+        <service android:name="com.amazon.avod.secondscreen.notifications.RemotePlaybackControlService" android:exported="false"/>
+        <service android:name="com.amazon.avod.secondscreen.notifications.SecondScreenNotificationService" android:exported="false"/>
+        <service android:name="com.amazon.avod.app.termination.UserForceCloseApplicationDetectorService" android:exported="false"/>
+        <service android:name="com.amazon.avod.detailpage.DetailPageInfoPreFetchingIntentService" android:exported="false"/>
+        <service android:name="com.amazon.avod.notification.DownloadNotificationActionIntentService" android:exported="false"/>
+        <service android:name="com.amazon.avod.sdk.DownloadSdkService" android:permission="com.amazon.avod.SDK_ACCESS" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.avod.sdk.internal.aidl.AivDownloadSdk"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.amazon.avod.notification.DownloadNotificationActionReceiver" android:permission="signature" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.avod.notification.DownloadNotificationAction.PAUSE"/>
+                <action android:name="com.amazon.avod.notification.DownloadNotificationAction.RESUME"/>
+                <action android:name="com.amazon.avod.notification.DownloadNotificationAction.CANCEL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/app_name" android:name="com.amazon.avod.settings.page.MainSettings" android:exported="false" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|fontScale">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http" android:host="www.amazon.com" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="https" android:host="www.amazon.com" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="http" android:host="www.amazon.co.uk" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="https" android:host="www.amazon.co.uk" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="http" android:host="www.amazon.de" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="https" android:host="www.amazon.de" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="http" android:host="www.amazon.co.jp" android:pathPattern="/piv-apk-settings"/>
+                <data android:scheme="https" android:host="www.amazon.co.jp" android:pathPattern="/piv-apk-settings"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="intent" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/settings_prefix"/>
+                <data android:scheme="intent" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/settings_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="com.amazon.avod.thirdpartyclient.SettingsActivity" android:exported="true" android:configChanges="touchscreen|keyboard|fontScale" android:targetActivity="com.amazon.avod.settings.page.MainSettings"/>
+        <activity android:name="com.amazon.avod.settings.page.MobileStreamingQualitySettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|fontScale"/>
+        <activity android:name="com.amazon.avod.settings.page.ContactUsSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|fontScale"/>
+        <receiver android:name="com.amazon.avod.thirdpartyclient.updater.ApplicationUpdatedBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.amazon.avod.thirdpartyclient.updater.ApplicationUpdatedIntentService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <service android:name="com.amazon.avod.thirdpartyclient.pushnotification.fcm.FcmMessageHandlingService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.amazon.avod.activity.InitializationErrorActivity" android:launchMode="singleTask" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.search.UnifiedSearchActivity" android:exported="true"/>
+        <meta-data android:name="avod.build.name" android:value="rambo"/>
+        <meta-data android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" android:value="com.amazon.avod.secondscreen.gcast.CastOptionsProvider"/>
+        <service android:name="com.amazon.avod.notification.DownloadInProgressNotificationService" android:exported="false" android:stopWithTask="true"/>
+        <service android:name="com.amazon.identity.auth.accounts.MAPSubAuthenticatorService">
+            <intent-filter>
+                <action android:name="com.amazon.dcp.sso.AccountSubAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="com.amazon.dcp.sso.AccountSubAuthenticator" android:resource="@xml/sub_authenticator"/>
+        </service>
+        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.amazon.avod.fileprovider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_paths"/>
+        </provider>
+        <receiver android:name="com.amazon.avod.notification.ClickOnNotificationReceiver" android:protectionLevel="signature" android:enabled="true" android:exported="false"/>
+        <receiver android:name="com.amazon.avod.notification.DismissNotificationReceiver" android:protectionLevel="signature" android:enabled="true" android:exported="false"/>
+        <receiver android:name="com.amazon.avod.locale.LocaleChangedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.avod.client.activity.NotificationActionForwardingReceiver" android:permission="signature" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.avod.pushnotification.NotificationAction"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.avod.pushnotification.scheduling.ScheduledNotificationActionReceiver" android:permission="signature" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.avod.pushnotification.ScheduledNotificationAction"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.amazon.avod.client.activity.BrowsePageActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content" android:host="com.amazon.avod.browse"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/browse_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/browse_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/browse_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/browse_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/browse_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/browse_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.library.LibraryActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.VIEW_YVL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/library_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/library_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/library_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/library_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/library_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/library_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.amazon.avod.secondscreen.gcast.init.CastVisibilityActivity"/>
+        <activity android:name="com.amazon.avod.download.activity.DownloadsEpisodeActivity" android:exported="false" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.following.mystuff.MyStuffFollowingActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.following.gridselector.FollowingSelectorActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/following_selection_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/following_selection_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/following_selection_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/following_selection_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/following_selection_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/following_selection_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.settings.page.NotificationSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.ParentalControlsSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.StreamingAndDownloadingSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.DownloadQualitySettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.GCastDataUsageSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.AutoDownloadsSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.DownloadLanguagePickerSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.AutoDownloadsLearnMoreSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.AboutUsSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.settings.page.LanguageSettings" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize|layoutDirection"/>
+        <activity android:name="com.amazon.avod.auth.VideoRegionErrorActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|fontScale"/>
+        <activity android:name="com.amazon.avod.client.activity.CantileverWebViewActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/cantilever_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/cantilever_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/cantilever_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/cantilever_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/cantilever_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/cantilever_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.locale.DeviceLanguageUnsupportedActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.LandingPageActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/landing_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/landing_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/landing_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/landing_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/landing_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/landing_prefix"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.client.activity.StoreTabActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.ChannelsTabActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.FreeTvActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.LiveTabActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.HelpWebViewActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.ParentalControlsWebViewActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.client.activity.CookiePrefsWebViewActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.purchase.WebViewPurchaseActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:theme="@style/res_2131951841_avod_theme_transparent" android:name="com.amazon.avod.purchase.MultiFactorAuthWebViewActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.launchscreens.LaunchScreensActivity" android:finishOnTaskLaunch="false" android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.watchparty.WatchPartyChatActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.watchparty.CreateWatchPartyActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.watchparty.JoinWatchPartyActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:path="@string/watchparty_pattern"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:path="@string/watchparty_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:path="@string/watchparty_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:path="@string/watchparty_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:path="@string/watchparty_pattern"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:path="@string/watchparty_pattern"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.auth.RegistrationActivity" android:exported="false" android:configChanges="touchscreen|keyboard|fontScale"/>
+        <activity android:name="com.amazon.avod.client.activity.WebViewSignUpActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:theme="@style/res_2131951841_avod_theme_transparent" android:name="com.amazon.avod.client.activity.NotificationActionForwardingActivity"/>
+        <activity android:name="com.amazon.avod.profile.create.ProfileCreationActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:name="com.amazon.avod.profile.manager.ProfileManagerActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:name="com.amazon.avod.profile.edit.ProfileEditActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity android:name="com.amazon.avod.profile.avatar.AvatarSelectionActivity" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize"/>
+        <activity android:theme="@style/res_2131951841_avod_theme_transparent" android:name="com.amazon.avod.client.activity.DeepLinkSettingsForwardingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/settings_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/settings_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/settings_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/settings_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/settings_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/settings_prefix"/>
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="content" android:host="com.amazon.avod.parentalcontrols"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.amazon.avod.intent.action.SETTINGS"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="amazon.intent.category.SETTINGS"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.NOTIFICATION_PREFERENCES"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.client.activity.SearchQueryActivity" android:exported="true" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.amazon.avod.playbackclient.activity.MobileVideoLearnMoreActivity" android:exported="true" android:launchMode="singleTop" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode"/>
+        <activity android:theme="@style/res_2131951839_avod_theme_translucent" android:name="com.amazon.avod.secondscreen.activity.QrCodeSignInAlertActivity" android:launchMode="singleTask" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/mytv_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/mytv_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/mytv_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/mytv_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/mytv_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/mytv_prefix"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.amazon.avod.linearpreviewrolls.ComingSoonPageActivity" android:launchMode="singleTop" android:screenOrientation="locked" android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|uiMode|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="aiv" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/comingsoon_prefix"/>
+                <data android:scheme="https" android:host="@string/app_primevideo_hostname" android:pathPrefix="@string/comingsoon_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname" android:pathPrefix="@string/comingsoon_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_uk" android:pathPrefix="@string/comingsoon_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_de" android:pathPrefix="@string/comingsoon_prefix"/>
+                <data android:scheme="https" android:host="@string/watch_amazon_hostname_jp" android:pathPrefix="@string/comingsoon_prefix"/>
+            </intent-filter>
+        </activity>
+        <provider android:name="com.amazon.avod.search.SearchHistoryProvider" android:exported="false" android:authorities="com.amazon.avod.searchhistory"/>
+        <service android:name="com.amazon.avod.playbackclient.whispercache.WhisperCachingIntentService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.amazon.avod.playbackclient.sdk.PlaybackSdkBroadcastReceiver" android:permission="com.amazon.avod.SDK_ACCESS" android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="com.amazon.avod.action.SERVICE_CLIENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.amazon.avod.playbackclient.sdk.PlaybackSdkService" android:permission="com.amazon.avod.SDK_ACCESS" android:exported="true">
+            <intent-filter>
+                <action android:name="com.amazon.avod.sdk.internal.aidl.AivPlaybackSdk"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.amazon.avod.download.QaHooksDownloadFeatureIntentService" android:exported="false"/>
+        <enable-feature android:name="com.amazon.device.messaging" android:required="true"/>
+        <service android:name="com.amazon.avod.pushnotification.adm.JobAmazonMessageHandlerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <service android:name="com.amazon.avod.pushnotification.adm.AmazonMessageHandlerService" android:exported="false"/>
+        <receiver android:name="com.amazon.avod.pushnotification.adm.MultiplexingMessageReceiver" android:permission="com.amazon.device.messaging.permission.SEND" android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="com.amazon.device.messaging.intent.REGISTRATION"/>
+                <action android:name="com.amazon.device.messaging.intent.RECEIVE"/>
+                <category android:name="com.amazon.avod"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.amazon.communication.AndroidTCommService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.communication.TCOMM"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.amazon.communication.NosNotificationReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.intent.action.NOS_DATA_TRANSFER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.communication.heartbeat.HeartbeatBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.intent.action.NOS_DATA_TRANSFER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.amazon.communication.remotesetting.ConfigurationSyncService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.communication.remotesetting.action.SYNC_CONFIG"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.amazon.communication.remotesetting.StageSwitchService" android:exported="false"/>
+        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" android:exported="false"/>
+        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" android:exported="false"/>
+        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" android:exported="false"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <service android:name="com.amazon.avod.messaging.AppStartService"/>
+        <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="false" android:directBootAware="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <activity android:theme="@style/res_2131951834_avod_theme_nobackground_notitlebar" android:name="com.amazon.avod.playbackclient.test.BasicTestPlaybackActivity" android:finishOnTaskLaunch="true" android:screenOrientation="sensorLandscape" android:configChanges="touchscreen|keyboard|fontScale"/>
+        <receiver android:name="com.amazon.avod.playbackclient.feature.audiofocus.AudioFocusManager$RemoteControlReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.avod.perf.PlaybackPerfBroadcastReceiver" android:permission="com.amazon.avod.SDK_ACCESS" android:protectionLevel="signature">
+            <intent-filter>
+                <action android:name="com.amazon.avod.action.PLAYBACK_PERF"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.amazon.avod.voicecontrols.service.PrimeVideoMediaService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService"/>
+            </intent-filter>
+            <meta-data android:name="com.amazon.alexa.externalmediaplayer.spiVersion" android:value="1"/>
+            <meta-data android:name="com.amazon.alexa.externalmediaplayer.playerCookie" android:value="value"/>
+        </service>
+        <activity android:theme="@style/res_2131951842_avod_theme_transparent_darkbackground" android:name="com.amazon.avod.contentrestriction.WebPinEntryActivity" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:theme="@style/TransparentActivityTheme" android:name="com.amazon.identity.auth.device.activity.GetAuthenticatorResultsActivity"/>
+        <uses-library android:name="com.amazon.client.metrics.api" android:required="false"/>
+        <activity android:label="Amazon AuthPortal" android:name="com.amazon.identity.auth.device.AuthPortalUIActivity" android:permission="com.amazon.identity.auth.device.perm.AUTH_SDK" android:exported="true" android:launchMode="singleTop" android:configChanges="mcc|touchscreen|keyboard|fontScale" android:allowTaskReparenting="true"/>
+        <activity android:label="Amazon Auth Challenge" android:name="com.amazon.identity.auth.device.activity.AuthChallengeHandleActivity" android:permission="com.amazon.identity.auth.device.perm.AUTH_SDK" android:exported="true" android:configChanges="mcc|touchscreen|keyboard|fontScale"/>
+        <activity android:label="Sign up and enroll" android:name="com.amazon.identity.auth.device.activity.ActorSignUpAndEnrollActivity" android:permission="com.amazon.identity.auth.device.perm.AUTH_SDK" android:exported="true" android:configChanges="mcc|touchscreen|keyboard|fontScale"/>
+        <activity android:label="Enroll actor UI" android:name="com.amazon.identity.auth.device.activity.ActorEnrollActivity" android:permission="com.amazon.identity.auth.device.perm.AUTH_SDK" android:exported="true" android:configChanges="mcc|touchscreen|keyboard|fontScale"/>
+        <service android:name="com.amazon.identity.auth.device.bootstrapSSO.BootstrapSSOService" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="com.amazon.identity.action.BOOTSTRAP_SSO"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.amazon.identity.auth.device.storage.DirtyDataSyncingService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.identity.action.SYNC_DIRTY_DATA"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.amazon.identity.auth.device.storage.DatabaseCleaner$DatabaseCleaningService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.identity.action.CLEAN_DATA"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.amazon.identity.auth.device.storage.LambortishClock$ChangeTimestampsBroadcastReceiver" android:enabled="false" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.identity.auth.accounts.SessionUserChangedToAccountForPackageChangedAdpater" android:exported="false">
+            <intent-filter>
+                <action android:name="com.amazon.dcp.sso.action.session.users.changed"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.avod.identity.AVODMAPBroadcastReceiver" android:permission="com.amazon.dcp.sso.permission.account.changed" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.amazon.dcp.sso.action.account.added"/>
+                <action android:name="com.amazon.dcp.sso.action.account.removed"/>
+                <action android:name="com.amazon.dcp.sso.action.secondary.account.added"/>
+                <action android:name="com.amazon.dcp.sso.action.secondary.account.removed"/>
+                <action android:name="com.amazon.identity.action.ACCOUNT_FOR_PACKAGE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.amazon.avod.identity.AVODMAPBroadcastProcessingIntentService" android:exported="false"/>
+        <service android:name="com.amazon.avod.identity.AVODMAPBroadcastProcessingJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false"/>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.amazon.avod.thirdpartyclient.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false"/>
+        <service android:name="org.eclipse.paho.android.service.MqttService"/>
+        <meta-data android:name="com.google.android.play.billingclient.version" android:value="4.1.0"/>
+        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.android.billingclient.api.ProxyBillingActivity" android:exported="false" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <service android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:directBootAware="false"/>
+        <service android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:directBootAware="false"/>
+        <receiver android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver" android:enabled="true" android:exported="false" android:directBootAware="false"/>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
