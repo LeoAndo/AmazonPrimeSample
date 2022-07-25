@@ -1,19 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonLaunchApp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="launch App"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/buttonHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (HOME)" />
+
+        <Button
+            android:id="@+id/buttonDownload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (DOWNLOAD)" />
+
+        <Button
+            android:id="@+id/buttonWatchList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (WATCH_LIST)" />
+
+        <Button
+            android:id="@+id/buttonWatchListV2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (WATCH_LIST_V2)" />
+
+        <Button
+            android:id="@+id/buttonDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (DETAIL)" />
+
+        <Button
+            android:id="@+id/buttonLibrary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (LIBRARY)" />
+
+        <Button
+            android:id="@+id/buttonFollowingSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (FOLLOWING_SELECTION)" />
+
+        <Button
+            android:id="@+id/buttonCantilever"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (CANTILEVER)" />
+
+        <Button
+            android:id="@+id/buttonComingSoon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AmazonPrime (COMINGSOON)" />
+    </LinearLayout>
+
+</ScrollView>

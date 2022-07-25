@@ -3,7 +3,7 @@ package com.leoleo2.amazonprimesample
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.content.Intent.*
 import android.net.Uri
 import android.widget.Toast
 
@@ -11,13 +11,13 @@ class AppLaunchHelper(private val context: Context) {
 
     /**
      * example
-     * https://www.netflix.com/watch/81002655
+     * sasa
      */
-    fun launchAmazonPrimeApp(watchId: String) {
+    fun launchAmazonPrimeApp(uriString: String) {
         launchExternalApp(onAction = {
             Intent().apply {
-                action = Intent.ACTION_VIEW
-                data = Uri.parse("https://www.netflix.com/watch/$watchId")
+                action = ACTION_VIEW
+                data = Uri.parse(uriString)
                 addFlags(FLAG_ACTIVITY_NEW_TASK)
             }.let {
                 context.startActivity(it)
