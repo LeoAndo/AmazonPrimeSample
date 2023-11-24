@@ -14,7 +14,7 @@ class AppLaunchHelper(private val context: Context) {
      * https://www.amazon.co.jp/gp/video/detail/B09PQB418P
      */
     fun launchAmazonPrimeApp(uriString: String) {
-        launchExternalApp(onAction = {
+        kotlin.runCatching {
             Intent().apply {
                 action = ACTION_VIEW
                 data = Uri.parse(uriString)
@@ -22,22 +22,13 @@ class AppLaunchHelper(private val context: Context) {
             }.let {
                 context.startActivity(it)
             }
-        }, onErrorAction = { showToast(it) })
-    }
-
-    private fun launchExternalApp(onAction: () -> Unit, onErrorAction: (String) -> Unit) {
-        kotlin.runCatching {
-            onAction.invoke()
         }.onFailure {
             when (it) {
                 is ActivityNotFoundException -> {
-                    onErrorAction(it.localizedMessage ?: "launch app error.")
+                    val message = it.localizedMessage ?: "launch app error."
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                 }
             }
         }
-    }
-
-    private fun showToast(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 }
